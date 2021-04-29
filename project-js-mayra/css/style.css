@@ -36,11 +36,21 @@
     img+p {
         padding: 2% 0 3% 0;
         width: 80%;
+        line-height: 1.25rem;
+    }
+    em {
+    	color: #eb5e28;
+    	font-style: normal;
     }
     h2 {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
         padding: 3% 0 3% 0;
     }
+    h2+p {
+        line-height: 1.5rem;
+        font-size: .875rem;
+    }
+
     .accordion {
         cursor: pointer;
     }
@@ -53,9 +63,28 @@
     .accordion p {
         display: none;
         line-height: 1.25rem;
-        padding-bottom: 3%;
-            }
-
-
+        padding: 2% 8% 4% 0;
+    }
+    table {
+        background-color: #fffcf2;
+    }
+    td {
+        font-size: .875rem;
+        text-align: center;
+        padding: 5%;
+        border: 1.5px solid #eb5e28;
+    }
+    td+td {
+        text-align: left;
+        line-height: 1.125rem;
+    }
+    footer {
+    	background-color: #ccc5b9;
+    	width: 100%;
+    	min-height: 500px;
+        margin-top: 2%;
+    }
+/*
+border: blue 1px solid;*/
 /*       -webkit-box-shadow: 0 0 10px #777777;
     	box-shadow: 0 0 10px #777777;*/

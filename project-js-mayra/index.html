@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>All About Pugs</title>
+  <title>The Pug Essentials</title>
   <link href="css/reset.css" rel="stylesheet" type="text/css" />
   <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -13,30 +13,30 @@
 	<nav>
 		<ul>
 			  	<li><a href="index.html">HOME</a></li>
-                <li><a href="">ABOUT</a></li>
-                <li><a href="">GET MORE INFO</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contactform.php">MORE INFO</a></li>
 		</ul>
 	</nav>
 	<!-- the website logo with clickable home link is below -->
 	<a href="index.html"><img src="images/grayscale2.jpg" alt=#  /></a>
 </div>
 <h1>THE PUG ESSENTIALS</h1>
-<img src="images/home_hero.jpg" alt="#" />
+<img src="images/home_hero1.jpg" alt="#" />
 <p>So you're thinking about adopting a Pug? Pugs are a funny, loving, and loyal breed. Once you have a Pug's love, it will remain by your side for all their life! Literally. Well here are some important things you might want to know about the breed before you adopt. Read below for some helpful tips! </p>
-<img src="images/pug_img1.jpg" alt="#" />
+<img src="images/health_01.jpg" alt="#" />
 <div class="accordion">
 <h2>HEALTH+</h2>
-<p>The Pug’s dark, appealing eyes are one of his main attractions, but also one of his vulnerable spots. Eye problems including corneal ulcers and dry eye have been known to occur. Like all flat-faced breeds, Pugs sometimes experience breathing problems and do poorly in sunny, hot, or humid weather.</p>
+<p><em>The Pug’s dark, appealing eyes</em> are one of his main attractions, but also one of his most vulnerable spots. Eye problems including corneal ulcers and dry eye have been known to occur. Like all flat-faced breeds, Pugs sometimes experience breathing problems and do poorly in sunny, hot, or humid weather.</p>
 </div>
-<img src="images/pug_img2.jpg" alt="#" />
+<img src="images/nutrition_01.jpg" alt="#" />
 <div class="accordion">
 <h2>NUTRITION+</h2>
-<p>The Pug should do well on a high-quality dog food, whether commercially manufactured or home-prepared with your veterinarian’s supervision and approval. Any diet should be appropriate to the dog’s age (puppy, adult, or senior). Pugs live to eat and are prone to obesity, so watch your dog’s calorie consumption and weight level. , so watch your dog’s calorie consumption and weight level. Treats can be an important aid in training, but giving too many can cause obesity. Learn about which human foods are safe for dogs, and which are not. Check with your vet if you have any concerns about your dog’s weight or diet. Clean, fresh water should be available at all times.</p>
+<p><em>The Pug should do well on a high-quality</em> dog food, whether commercially manufactured or home-prepared with your veterinarian’s supervision and approval. Any diet should be appropriate to the dog’s age (puppy, adult, or senior). Pugs live to eat and are prone to obesity, so be sure to watch your dog’s calorie consumption and weight level. Treats can be an important aid in training, but giving too many can cause obesity. Learn about which human foods are safe for dogs, and which are not. Check with your vet if you have any concerns about your dog’s weight or diet. Clean, fresh water should be available at all times.</p>
 </div>
-<img src="images/pug_img3.jpg" alt="#" />
+<img src="images/grooming_01.jpg" alt="#" />
 <div class="accordion">
 <h2>GROOMING+</h2>
-<p>The Pug’s short, smooth, glossy coat needs minimal maintenance, but it does shed. Weekly brushing with a medium-bristle brush, a rubber grooming mitt, or a hound glove will help to remove the loose hair and help keep him looking his best. Pugs don’t need to be bathed unless they happen to get into something particularly messy or start to get a doggy odor. The Pug’s nails should be trimmed regularly, as overly long nails can cause him discomfort</p>
+<p><em>The Pug’s short, smooth, glossy coat</em> needs minimal maintenance, but it does shed ALOT. Weekly brushing with a medium-bristle brush, a rubber grooming mitt, or a hound glove will help to remove the loose hair and help keep them looking their best. Pugs don’t need to be bathed unless they happen to get into something particularly messy or start to get a doggy odor. The Pug’s nails should be trimmed regularly, as overly long nails can cause them discomfort.</p>
 </div>
 <!-- the footer will start here -->
 <footer>
@@ -52,17 +52,13 @@
 <!-- custom script that accesses JQ and any plugins -->
 <script type="text/javascript">
       $('.accordion h2').on('click', function(){
-        console.log(this) ; //this is a keyword in JS
-        let thisTitle = $(this);
-        thisTitle.next().slideToggle(1000);
 
-        // $('.accordion h3 + p').slideToggle(1000);
-
+        $(this).next().slideToggle();
 
       })
 
 
-  </script>
+</script>
 </div>	
 </body>
 </html>
