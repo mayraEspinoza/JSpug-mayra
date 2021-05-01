@@ -2,24 +2,29 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Pug Essentials</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="css/reset.css" rel="stylesheet" type="text/css" />
   <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <div class="container">
-	<div class="navbox">
 	<nav>
-		<ul>
-			  	<li><a href="index.html">HOME</a></li>
+    <label class="logo">PugLife&copy;</label>
+    <!-- <div class="openMenu"><i class="fas fa-bars"></i></div> -->
+    <ul>
+			  	<li><a class="active" href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="contactform.php">MORE INFO</a></li>
+    <!-- <div class="closeMenu"><i class="fas fa-times"></i></div> -->
 		</ul>
+    <label id="icon">
+      <i class="fas fa-bars"></i>
+    </label>
 	</nav>
 	<!-- the website logo with clickable home link is below -->
-	<a href="index.html"><img src="images/grayscale2.jpg" alt=#  /></a>
-</div>
+
 <h1>THE PUG ESSENTIALS</h1>
 <img src="images/home_hero1.jpg" alt="#" />
 <p>So you're thinking about adopting a Pug? Pugs are a funny, loving, and loyal breed. Once you have a Pug's love, it will remain by your side for all their life! Literally. Well here are some important things you might want to know about the breed before you adopt. Read below for some helpful tips! </p>
@@ -47,9 +52,8 @@
              <a href="https://facebook.com" target="_blank"> <img src="images/fb_icon.png" alt="facebook logo"  /></a>
         </div>
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- jQuery Plugins -->
-<!-- custom script that accesses JQ and any plugins -->
 <script type="text/javascript">
       $('.accordion h2').on('click', function(){
 
@@ -59,6 +63,7 @@
 
 
 </script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </div>	
 </body>
 </html>
