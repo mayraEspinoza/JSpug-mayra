@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title>JS Clock</title>
+	<style type="text/css">
+		body{
+			background-color: black;
+			margin: 0 auto;
+			text-align: center;
+		}
+		#clock{
+			margin: 10px auto; 
+		}
+	</style>
+</head>
+<body>
+<div id="clock">
+	<img id="hour-one" src="images/0.jpg">
+	<img id="hour-two" src="images/0.jpg">
+	<img src="images/colon.jpg">
+	<img id="minute-one" src="images/0.jpg">
+	<img id="minute-two" src="images/0.jpg">
+	<img id="meridiem" src="images/A.jpg">
+</div>
+<!-- a quick note: a.m. stands for ante meridiem, and p.m. stands for post meridiem. Meridiem is latin for mid-day (noon) Hope that helps to put that last image into context -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+
+
+
+function displayTime(){
+
+
+
+	let currentHour = getHourOne(); 
+	let currentMins = getMinuteOne(); 
+
+
+	if(currentHour > 11){
+		currentHour-=12;
+	}
+
+	if(currentHour == 0){
+		currentHour = 12;
+	}
+
+	if(currentHour < 10 ){
+		currentHour = '0'+currentHour; 
+
+	if(currentMins < 10 ){
+		currentMins = '0'+currentMins;  
+	}
+
+   
+
+	$('#hour-one').text(currentHour);
+	$('#minute-one').text(currentMins);
+
+	requestAnimationFrame(displayClock)
+	}
+
+
+
+
+</script>
+</body>
+</html>
