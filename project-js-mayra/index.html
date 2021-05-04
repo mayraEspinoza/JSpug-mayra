@@ -10,8 +10,9 @@
 </head>
 <body>
   <div class="container">
-  <div class="navbox">
-  <nav>
+    <div class="navbox">
+    <a href="#main-nav" class="menu-link">Menu</a>
+  <nav id="main-nav" role="navigation" class="cf">
     <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
@@ -22,24 +23,32 @@
   <a href="index.html"><img class ="logopug" src="images/logo_pug.png" alt=#  /></a>
 </div>
 	<!-- the website logo with clickable home link is below -->
-<h1>THE PUG ESSENTIALS</h1>
-<img src="images/home_hero1.jpg" alt="#" />
+
+<div class="herobox"><h1>THE PUG ESSENTIALS</h1></div>
 <p>So you're thinking about adopting a Pug? Pugs are a funny, loving, and loyal breed. Once you have a Pug's love, it will remain by your side for all their life! Literally. Well here are some important things you might want to know about the breed before you adopt. Read below for some helpful tips! </p>
+<main>
+  <div class="imgbox">
 <img class="sizeS" src="images/health_01.jpg" alt="#" />
 <div class="accordion">
 <h2>HEALTH+</h2>
 <p><em>The Pug’s dark, appealing eyes</em> are one of his main attractions, but also one of his most vulnerable spots. Eye problems including corneal ulcers and dry eye have been known to occur. Like all flat-faced breeds, Pugs sometimes experience breathing problems and do poorly in sunny, hot, or humid weather.</p>
 </div>
+</div>
+<div class="imgbox">
 <img class="sizeS" src="images/nutrition_01.jpg" alt="#" />
 <div class="accordion">
 <h2>NUTRITION+</h2>
 <p><em>The Pug should do well on a high-quality</em> dog food, whether commercially manufactured or home-prepared with your veterinarian’s supervision and approval. Any diet should be appropriate to the dog’s age (puppy, adult, or senior). Pugs live to eat and are prone to obesity, so be sure to watch your dog’s calorie consumption and weight level. Treats can be an important aid in training, but giving too many can cause obesity. Learn about which human foods are safe for dogs, and which are not. Check with your vet if you have any concerns about your dog’s weight or diet. Clean, fresh water should be available at all times.</p>
 </div>
+</div>
+<div class="imgbox">
 <img class="sizeS" src="images/grooming_01.jpg" alt="#" />
 <div class="accordion">
 <h2>GROOMING+</h2>
 <p><em>The Pug’s short, smooth, glossy coat</em> needs minimal maintenance, but it does shed ALOT. Weekly brushing with a medium-bristle brush, a rubber grooming mitt, or a hound glove will help to remove the loose hair and help keep them looking their best. Pugs don’t need to be bathed unless they happen to get into something particularly messy or start to get a doggy odor. The Pug’s nails should be trimmed regularly, as overly long nails can cause them discomfort.</p>
 </div>
+</div>
+</main>
 <!-- the footer will start here -->
 <footer>
 	   <div class="social">
@@ -48,19 +57,32 @@
              <a href="https://instagram.com" target="_blank"> <img src="images/ig_icon.png" alt="instagram logo"  /></a>
              <a href="https://facebook.com" target="_blank"> <img src="images/fb_icon.png" alt="facebook logo"  /></a>
         </div>
-        <!-- logo img goes here --> 
+        <!-- logo img goes here -->
+        <div> 
+          <a href="index.html"><img class ="logopug" src="images/logo_pug.png" alt=#  /></a>
         <p>Pug Life is a small group of dog owners who give their insight and recommendations based off their own experiences being Pug owners.</p>
-        <small>&copy; 2021 Pug Life All Rights Reserved</small>
+      </div>
+        
 </footer>
+<small>&copy; 2021 Pug Life All Rights Reserved</small>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="scripts/navtogg.js"></script>
+<!-- put the script external link right here  -->
 <script type="text/javascript">
       $('.accordion h2').on('click', function(){
 
         $(this).next().slideToggle();
 
       })
+      
+      // $('.menu-link').click( function(){
+      //   //$('this') or $('.menu-link') these are both th esame in THIS function because menu-link received the click
+      //   //toggleClass('active')
+      //   $('#main-nav, .menu-link').toggleClass('active');
 
+
+      // })
 
 </script>
 </div>	
