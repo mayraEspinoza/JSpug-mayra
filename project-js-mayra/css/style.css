@@ -17,11 +17,13 @@
     .navbox {
         background-color: #ccc5b9;
         width:100%;
+        padding: 4%;
         display: flex;
         justify-content: space-between;
     }
     .logopug {
         width: 100%;  
+        margin-right: 3%;
     }
     /*the navigation css for mobile
     starts here*/
@@ -39,18 +41,25 @@
     }
     #main-nav.active{
   /*display: block;*/
-    max-height: 4em;
+    max-height: 30em;
+    margin: 4%;
     }
     .menu-link {
         font-family: 'Inter', sans-serif;
         font-size: 1.25rem; 
         color: #403d39;
         text-decoration: none;
-        margin: 10% 0 7% 4%;
+        margin: 10% 0 7% 2%;
+    }
+    nav ul {
+        justify-content: space-between;
+        line-height: 1.4rem;
+        font-weight: bold;
     }
     li a {
         color: #403d39;
         text-decoration: none;
+        /*border: 1px solid blue;*/
     }
     li a:hover {
         background-color: #eb5e28; 
@@ -61,15 +70,17 @@
     /*home hero img for 
     mobile is here*/
     .herobox {
-        background: url("../images/home_heroSM.jpg") center 0 no-repeat;
-        min-height: 195px
+        background: url("../images/home_heroSM.jpg") center;
+        background-size: cover;
+        min-height: 195px;
+        max-width: 100%;
     }
     h1 {
         font-size: 1.7rem;
         margin: 5% 0;
         color: #fffcf2;
         background-color: rgba(0,0,0,.2); 
-        width: 100%;
+        max-width: 100%;
     }
     .sizeS {
         width: 100%;
@@ -120,12 +131,17 @@
     .social a {
         padding: 7%;
     }
-    footer .logopug {
-        width: 40%;
-        margin-left: 30%;
+    .footpug {
+        width: 20%;
+        margin-left: 40%;
     }
     footer p {
         font-size: .75rem;
+        text-align: center;
+        padding: 5%;
+    }
+    footer span {
+        color: #eb5e28;
     }
     small {
         display: block;
@@ -217,23 +233,110 @@
     }
     .sizeS {
         width: 60%;
+        margin: 2% 2% 2% 0;
     }
     .imgbox {
         display: flex;
     }
-    /*fix the footer not complete yet*/
-/*    footer {
-    
+    .accordion p {
+        display: block;
+    }
+    /*footer for medium starts below*/
+    footer {
+        width: 100%;
+        min-height: 100px;
+        display: flex;
         justify-content: space-between;
-    }*/
+    }
+    .social {
+    display: flex; 
+     }
+     footer p {
+        margin-left: 20%
+     }
+    .social a {
+        padding: 4%;
+    }
+    .logopug {
+        display: block;
+    }
+    .footpug{
+        width: 10%;
+        margin-left: 15%;
+    }
+    small {
+        margin: 3%;
+    }
+    /*the css for the contact 
+    page begins here*/ 
+    main h1 {
+        font-size: 2rem;
+        background: transparent;
+        color: #403d39;
+        padding: 0;
+    }
+    legend {
+        font-size: 1.25rem;
+    }
+    @media screen and (min-width: 960px) {
+        .container{
+            padding: 0;
+        }
+        .navbox {
+            margin: 0;
+            padding: 3%;
+            justify-content: space-around;
+        }
+        .menu-link {
+            display: none;
+        }
+        #main-nav {
+            display: block;
+            max-height: 4em;
+        }
+        nav ul {
+            display: flex;
+            flex-wrap: nowrap;
+            line-height: 3.5rem;
+        }
+        li a {
+        padding: 1rem;
+        }
+        .herobox {
+        background: url("../images/home_heroLG.jpg") center 0 no-repeat;
+        min-height: 592px;
+        }
+        h1{
+        font-size: 3rem;
+        }
+        .herobox+p {
+            padding: 0 3%;
+        }
+        /*fix the img size in the imgbox the text makes the img stretch*/
 
-        footer .logopug {
-        width: 20%;
+         .sizeS {
+        width: 60%;
+         }
+    .imgbox {
+        width: 50%;
+        }
+        .herobox+p {
+            line-height: 1.5rem;
+        }
+        main{
+            display: flex;
+        }
+        h2 {
+            font-size: .875rem;
+        }
+          .accordion p {
+        display: none;
+        padding: 0;
+        font-size: .6875rem;
     }
 
 
-
-}
+     
 /*border: blue 1px solid;*/
 /*       -webkit-box-shadow: 0 0 10px #777777;
     	box-shadow: 0 0 10px #777777;*/
