@@ -23,10 +23,34 @@
   <a href="index.html"><img class ="logopug" src="images/logo_pug_03.png" alt=#  /></a>
 </div>
 	<h1>ALL ABOUT PUGS</h1>
-	<img src="images/pug_img3.jpg" alt="#" />
-	<h2>PERSONALITY</h2>
+    <div class="outer-container">
+    <div class="inner-container">
+      <div class="slide-container">
+        <div class="slide">
+          <img src="images/pugslide_3.jpg" title="Best part of waking up" alt="pug 1">
+        </div>
+        <div class="slide">
+          <img src="images/pugslide_2.jpg" title="Sharing is caring" alt="pug 2">
+        </div>
+        <div class="slide">
+          <img src="images/pugslide_1.jpg" title="Coffee is Love" alt="pug 3">
+        </div>
+        <div class="slide">
+          <img src="images/pugslide_4.jpg" title="You snooze ou loose" alt="pug 4">
+        </div>
+        <div class="slide">
+          <img src="images/pugslide_5.jpg" title="You snooze ou loose" alt="pug 4">
+        </div>         
+      </div><!-- end slide container -->
+    </div><!-- end inner container -->
+    <div class="slide-arrow-container">
+      <div class="prev button mouse-click"><i class="fas fa-arrow-circle-left"></i></div>
+      <div class="next button mouse-click"><i class="fas fa-arrow-circle-right"></i></div>
+    </div>  
+  </div>
+	<h2 class="topic">PERSONALITY</h2>
 	<p>The Pug is often described as a lot of dog in a small space. These sturdy, compact dogs are a part of the American Kennel Club’s Toy group, and are known as the clowns of the canine world because they have a great sense of humor and like to show off. Originally bred to be lap dogs, Pugs thrive on human companionship. They’re highly sensitive, and though they can make for great apartment pets, they will not appreciate being left home alone for long hours of the day. Although these pups have a stubborn side, especially when it comes to house training, they’re playful, affectionate dogs who will get along well even with novice pet parents. If you’re looking for a loving, easygoing pal, this may be the breed for you!</p>
-	<h2>HISTORY</h2>
+	<h2 class="topic">HISTORY</h2>
 	<p>The Pug, often called the Pug Dog, is an ancient breed that can be traced back some 2,000 years. The emperors of ancient China had a preference for flat-faced toy dogs—the Pekingese, Shih Tzu, and Pug were all developed as refined pets of the emperor, his family, and members of the imperial court. Like many breeds favored by Far Eastern potentates of the ancient world, Pugs were a closely held treasure that outsiders could acquire only as a gift. The Pug’s career as citizen of the world began sometime in the 1500s, when Dutch traders returned to Europe with specimens of the breed. Legend holds that the Pug became the mascot of Holland’s royal House of Orange when a Pug save the life of the Prince of Orange by barking to warn the prince of an attack on his camp by Spanish troops. When William and Mary of Orange arrived in England to assume the monarchy, their Pugs accompanied them and began a craze for the breed among the British.The worldwide fascination with Pugs can be gauged by how many names the breed has had in various eras and places: Lo-sze (China), Mopsi (Finland), Doguillo (Spain) are just a few. Among the Dutch, still closely associated with Pugs, they are known as Mophonds. Theories abound as to the origin of the name Pug. One suggests that Pug is based on the Latin word “pugnus,” meaning “fist”—the idea being that the dog’s face resembles a clenched fist.</p>
 	<h2>COATS AND COLORS</h2>
 	<table>
@@ -73,5 +97,67 @@
         
 </footer>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+let slideCount = 0; //stores the number of slides
+let currentSlide = 1; //this stores the num slides we are showing this correlates with its id
+
+let slideContainer = $('.slide-container'); //stores slideContainer in a variabe so we can access it more easily
+
+$('.slide').each( function(index){
+  //handle each slide and do the following
+  $(this).attr('id', index+1);
+  //this adds the attribute of id based on the slide index and adds one to it and sets the value
+  if(index !=0){
+    $(this).css({'left': slideContainer.width()})
+  }else{
+    $(this).addClass('current')
+  }
+
+  slideCount++; //adds 1 to slideCount for each slide this lets me know when we have reached out highest number of slides
+
+})
+
+
+function nextSlide(){
+
+   let incomingSlide = currentSlide + 1;
+
+   if(incomingSlide > slideCount){
+    incomingSlide = 1;
+   }
+
+   $('#'+currentSlide).removeClass('current').animate({'left': -slideContainer.width()}, 300, function(){
+    //callback function
+
+   });
+
+   // here come the incoming slides
+   $('#'+incomingSlide).addClass('current').css({'left':slideContainer.width()}).animate({'left': 0}, 300);
+
+   currentSlide = incomingSlide; 
+
+}
+
+  function prevSlide(){
+    let incomingSlide = currentSlide - 1;
+
+    if(incomingSlide == 0){
+      incomingSlide = slideCount; //slideCount is the highest slide number 
+    }
+
+   $('#'+currentSlide).removeClass('current').animate({'left': slideContainer.width()}, 300, function(){
+    //callback function
+
+   });
+   $('#'+incomingSlide).addClass('current').css({'left': -slideContainer.width()}).animate({'left': 0}, 300);
+
+      currentSlide = incomingSlide;
+  }
+  $('.next').click(nextSlide);
+  $('.prev').click(prevSlide);
+
+
+</script>
 </body>
 </html>

@@ -151,6 +151,92 @@
     }
     /*the about mobile
      css starts here*/
+     /*this is the css for the slider on the page*/
+    .outer-container{
+      position: relative;
+      /*this changes the size of the holding container*/
+      max-width: 800px;
+      margin: 0 auto;
+     /* border: 1px solid black;*/
+    }
+
+    .inner-container{
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-container{
+      width: 100%;
+      height: 0;
+      /*THESE NUMBERS CHANGE BELOW TO MATCH VALUES CALCULATED*/ 
+      max-width: 900px;
+      max-height: 600px;
+      padding-bottom: 66.6666%;
+      /*
+      CHANGE THIS INFORMATION FOR THE ACTUAL IMG BEING USED
+      padding-bottom is relative to the width
+  900/600 = 1.5 aspect ratio 
+      100/1.5 = 66.6666%
+      new CSS property - aspect-ratio: 3 / 2;
+      caniuse says 66% adoption rate so not ready for prime time
+      */
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      line-height: 1rem;
+      aspect-ratio: 1 / 1.22;
+    }
+
+    .slide-container div.slide{
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .slide-container div.slide img{
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0 auto;
+    }
+    /*styles for arrows/buttons*/
+    .mouse-click{
+      cursor: pointer;
+    }
+
+    .slide-arrow-container{
+      position: relative;
+      width: 100%;
+      height: 32px; 
+    }
+
+    .slide-arrow-container .button{
+      position: absolute;
+      top: 0;;
+      outline: 0;
+/*      width: 32px;
+      height: 32px;
+      text-indent: -9999px;*/
+      z-index: 100;
+    }
+
+    .slide-arrow-container .prev.button{
+      position: absolute;
+      left: 10px;
+      margin: 2%;
+    }
+
+    .slide-arrow-container .next.button{
+      position: absolute;
+      right:10px;
+        margin-top: 2%;
+    }
+    .fas {
+            font-size: 1.5rem;
+    }
     div+h1 {
         color: #403d39;
         background-color: transparent;
@@ -312,12 +398,10 @@
         .herobox+p {
             padding: 0 3%;
         }
-        /*fix the img size in the imgbox the text makes the img stretch*/
-
          .sizeS {
         width: 60%;
          }
-    .imgbox {
+        .imgbox {
         width: 50%;
         }
         .herobox+p {
@@ -329,12 +413,30 @@
         h2 {
             font-size: .875rem;
         }
-          .accordion p {
+        .accordion p {
         display: none;
         padding: 0;
-        font-size: .6875rem;
-    }
+        font-size: .75rem;
+        }
+        /*about css starts here*/
+        .topic {
+            font-size: 1.5rem;
+        }
+        .container {
+        padding: 4%;
+        }
+        .footpug {
+        margin-left: 60%;
+        }
+        footer {
+            max-height: 200px;
+            padding:2%;
+        }
+        footer p {
+        padding: 0 5%;
+        }
 
+    }
 
      
 /*border: blue 1px solid;*/
