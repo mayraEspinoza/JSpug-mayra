@@ -46,7 +46,7 @@
     <div class="slide-arrow-container">
       <div class="prev button mouse-click"><i class="fas fa-arrow-circle-left"></i></div>
       <div class="next button mouse-click"><i class="fas fa-arrow-circle-right"></i></div>
-    </div>  
+    </div> 
   </div>
 	<h2 class="topic">PERSONALITY</h2>
 	<p>The Pug is often described as a lot of dog in a small space. These sturdy, compact dogs are a part of the American Kennel Club’s Toy group, and are known as the clowns of the canine world because they have a great sense of humor and like to show off. Originally bred to be lap dogs, Pugs thrive on human companionship. They’re highly sensitive, and though they can make for great apartment pets, they will not appreciate being left home alone for long hours of the day. Although these pups have a stubborn side, especially when it comes to house training, they’re playful, affectionate dogs who will get along well even with novice pet parents. If you’re looking for a loving, easygoing pal, this may be the breed for you!</p>
@@ -79,8 +79,7 @@
         <td>This coat is multi colored in a stripe design usually a mix between black, dark browns and tan.</td>
       </tr>
     </table>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="scripts/navtogg.js"></script>
+
 <!-- the footer will start here -->
 <footer>
      <div class="social">
@@ -93,11 +92,12 @@
         <div> 
       <p><span>Pug Life</span> is a small group of dog owners who give their recommendations and insight based off their own experiences being Pug owners.</p>
   <a href="index.html"><img class ="footpug" src="images/logo_pug_03.png" alt=#  /></a>
-      </div>
-        
+      </div> 
 </footer>
+<small>&copy; 2021 Pug Life All Rights Reserved</small>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="scripts/navtogg.js"></script>
 <script type="text/javascript">
 let slideCount = 0; //stores the number of slides
 let currentSlide = 1; //this stores the num slides we are showing this correlates with its id
@@ -120,6 +120,7 @@ $('.slide').each( function(index){
 
 
 function nextSlide(){
+  removeClicks();
 
    let incomingSlide = currentSlide + 1;
 
@@ -129,6 +130,7 @@ function nextSlide(){
 
    $('#'+currentSlide).removeClass('current').animate({'left': -slideContainer.width()}, 300, function(){
     //callback function
+    addClicks();
 
    });
 
@@ -140,6 +142,7 @@ function nextSlide(){
 }
 
   function prevSlide(){
+    removeClicks();
     let incomingSlide = currentSlide - 1;
 
     if(incomingSlide == 0){
@@ -147,6 +150,7 @@ function nextSlide(){
     }
 
    $('#'+currentSlide).removeClass('current').animate({'left': slideContainer.width()}, 300, function(){
+    addClicks();
     //callback function
 
    });
@@ -154,8 +158,18 @@ function nextSlide(){
 
       currentSlide = incomingSlide;
   }
+
+  function addClicks(){
   $('.next').click(nextSlide);
   $('.prev').click(prevSlide);
+  }
+
+  function removeClicks(){
+    $('.next, .prev').off();
+  }
+
+  addClicks();
+
 
 
 </script>

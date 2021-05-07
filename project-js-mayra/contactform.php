@@ -1,4 +1,66 @@
-<?php include('includes/contact-parse_new.php');?>
+<?php
+//var_dump($_POST);
+
+$did_mail = false;
+
+if( isset($_POST['did_submit']) && $_POST['did_submit'] == 1){
+  
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+  $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+
+$valid = true;
+$errors = '';
+
+if($name == ''){
+  $valid = false;
+  $errors .= 'Please fill out your name.<br>';
+}
+
+
+if( ! filter_var($email, FILTER_VALIDATE_EMAIL)){
+  $valid = false;
+  $errors .= 'Please enter a valid email address.<br>';
+
+}
+if($message == ''){
+  $valid = false;
+  $errors .= 'Please enter a message';
+}
+//echo "valid is: $valid";
+if($valid){
+//echo 'valid is true' . $did_mail;
+  $to = 'mayraespinoza0715@platt.edu';
+  $subject = "Info from contact form: pug  life \n";
+  $body = "You have a message from $name: \n";
+  $body .= "$message \n";
+  $headers = "Reply-to: $email \r\n";
+  $headers .= "From: $to";
+
+  $did_mail = mail($to, $subject, $body, $headers);
+
+   if($did_mail){
+
+   $user_message = "Thank you, $name. We will contact you shortly.";
+
+  }else{
+
+$user_message = 'we were unable to send your message at this time. ';
+// echo $user_message;
+}
+
+}else{
+if($errors != ''){
+$user_message .= $errors;
+}
+//echo 'valid is false';
+}
+   
+      
+
+} //end did submit
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -23,13 +85,19 @@
   <!-- the website logo with clickable home link is below -->
   <a href="index.html"><img class ="logopug" src="images/logo_pug_03.png" alt=#  /></a>
 </div>
-<main>
-  <h1>NEED INFORMATION?<span>CONTACT US!</span></h1>
+  <h1 class="greeting">NEED INFORMATION?<span> CONTACT US!</span></h1>
+  <main class="formbox">
   <img src="images/contact_us1.jpg" alt="#" />
-</main>
-
+<section>
+        <p class="message">
+    <?php 
+    if(isset($user_message)){
+        echo $user_message;
+        }
+        ?>
+      </p>
         <!-- <p>We are awesome</p> -->
-        <form action="contactform.php" method="post" name="signup" id="signup" class="cf">
+        <form action="contactform.php" method="post" id="sign-up" class="cf">
             <fieldset class="info">
             <legend>Contact Info</legend>
         
@@ -44,21 +112,14 @@
 
           </fieldset>
           <div>
-            <input type="submit" name="submit" value="Submit" id="button" >
+            <input type="submit" name="submit" value="Submit">
             <button type="reset" name="button" id="button">Reset</button>
           </div>
           <!-- this field is mandatory form to work belowwwww -->
-          <input type="hidden" name="did_send" value="1" >
+          <input type="hidden" name="did_submit" value="1" >
         </form>
-        <!-- set up the success message -->
-        <?php 
-        if($_REQUEST['DID_SEND']==1){
-          echo '<div class="'.$status.'">An email has been sent';
-            echo $display_msg;
-            echo '</div>';
-        }
-        ?>
-
+        </section>
+        </main>
 <footer>
      <div class="social">
           <h3>Follow Us:</h3>
@@ -73,14 +134,42 @@
       </div>
         
 </footer>
+</div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="scripts/jquery.validate_t.js"></script>
-  <script src="scripts/validTests.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
   <script src="scripts/navtogg.js"></script>
 <script type="text/javascript">
-  
+      // $('#sign-up').validate();
+    $('#sign-up').validate({
+        rules:{
+          name:'required', 
+          email: {
+            required: true,
+            email:true
+          },
+          message: {
+            required: true,
+            minlegnth: 2
+          }
+        }, //end of rules
+
+        messages: {
+            name: 'Please enter your name',
+            email: {
+              required:'Please supply your email Address',
+              email: 'This is not a valid email, please correct.'
+            },
+            message: 'Please tell us what you want to know'
+            
+
+
+        }//end of messages
+
+
+    });
      
    </script>
-   </div>
+   
    </body>
    </html>
+
